@@ -12,6 +12,7 @@
   </head>
 
   <body>
+    <a href="#main" class="skip-link">Saltar al contenido principal</a>
     <header>
       <img
         class="header-img"
@@ -29,7 +30,7 @@
       </nav>
     </header>
 
-    <main>
+    <main id="main">
       <section>
         <h2>Acerca de mi</h2>
         <p class="intro">
@@ -44,20 +45,23 @@
           gatos!
         </p>
         <ul class="social-media">
-          <li>
-            <a href="https://twitter.com/gmzjuliana" target="_blank"
-              ><img src="images/twitter.png" alt="Twitter"
-            /></a>
+          <li title="Ir a Twitter">
+            <a href="https://twitter.com/gmzjuliana" target="_blank">
+              <img src="images/twitter.png" alt="Twitter" />
+              <p>Twitter</p>
+            </a>
           </li>
-          <li>
-            <a href="https://github.com/gmzjuliana" target="_blank"
-              ><img src="images/github-logo.png" alt="Github"
-            /></a>
+          <li title="Ir a Github">
+            <a href="https://github.com/gmzjuliana" target="_blank">
+              <img src="images/github-logo.png" alt="Github" />
+              <p>Github</p>
+            </a>
           </li>
-          <li>
-            <a href="https://www.linkedin.com/in/gomezjuliana/" target="_blank"
-              ><img src="images/linkedin.png" alt="LinkedIn"
-            /></a>
+          <li title="Ir a LinkedIn">
+            <a href="https://www.linkedin.com/in/gomezjuliana/" target="_blank">
+              <img src="images/linkedin.png" alt="LinkedIn" />
+              <p>LinkedIn</p>
+            </a>
           </li>
         </ul>
       </section>
@@ -65,75 +69,98 @@
       <section>
         <h2>Mis proyectos</h2>
         <div class="carousel">
-          <div class="arrow arrow-left" aria-label="Botón retroceder"></div>
+          <button
+            class="arrow arrow-left"
+            aria-label="Botón retroceder"
+          ></button>
           <div class="window">
             <ul class="project-container">
-              <li>
-                <button>
+              <li class="project1-container">
+                <button class="project1 project">
                   <img
                     src="./images/project1.png"
                     alt="Proyecto 1"
-                    class="project"
+                    class="project-img"
                   />
                 </button>
               </li>
-              <li>
-                <button>
+              <li class="project2-container">
+                <button class="project2 project">
                   <img
                     src="./images/project2.png"
                     alt="Proyecto 2"
-                    class="project"
+                    class="project-img"
                   />
                 </button>
               </li>
-              <li>
-                <button>
+              <li class="project3-container">
+                <button class="project3 project">
                   <img
                     src="./images/project3.png"
                     alt="Proyecto 3"
-                    class="project"
+                    class="project-img"
                   />
                 </button>
               </li>
-              <li aria-hidden="true">
-                <button>
+              <li class="project4-container" aria-hidden="true">
+                <button class="project4 project" tabindex="-1">
                   <img
                     src="./images/project4.png"
                     alt="Proyecto 4"
-                    class="project"
+                    class="project-img"
                   />
                 </button>
               </li>
-              <li aria-hidden="true">
-                <button>
+              <li class="project5-container" aria-hidden="true">
+                <button class="project5 project" tabindex="-1">
                   <img
                     src="./images/project5.png"
                     alt="Proyecto 5"
-                    class="project"
+                    class="project-img"
                   />
                 </button>
               </li>
             </ul>
           </div>
-          <div class="arrow arrow-right" aria-label="Botón avanzar"></div>
+          <button class="arrow arrow-right" aria-label="Botón avanzar"></button>
         </div>
       </section>
     </main>
 
     <footer class="contact-section">
       <h1>Contacto</h1>
+      <p class="intro center">
+        Puedes usar el formulario siguiente para contactar conmigo.
+      </p>
       <form>
-        Nombre<input type="text" aria-label="input nombre" /> <br />
-        Correo<input type="text" aria-label="input correo" /> <br />
-        <div class="message-input">Mensaje<input type="text" /> <br /></div>
+        <label for="name">
+          Nombre
+          <input id="name" type="text" aria-label="input nombre" required />
+          <span id="name-error" aria-live="assertive"></span>
+        </label>
+        <label for="correo">
+          Correo
+          <input id="correo" type="text" aria-label="input correo" />
+        </label>
+        <label for="mensaje">
+          Mensaje
+          <textarea id="mensaje" name="mensaje" rows="4" cols="50"></textarea>
+        </label>
         <button class="send-button">Enviar</button>
       </form>
     </footer>
-    <div class="notification">El formulario fue enviado sin errores</div>
+    <div class="notification" aria-live="assertive">
+      El formulario fue enviado sin errores
+    </div>
     <div class="modal-container">
       <div class="modal">
-        Ejemplo de un proyecto mio
-        <div class="modal-project-image"></div>
+        <h2 id="modal-header" tabindex="0">Ejemplo de un proyecto mio</h2>
+        <img
+          src="./images/project1.png"
+          class="modal-project-image"
+          alt="Pantalla del proyecto."
+        />
+        <button class="modal-button">Cerrar</button>
       </div>
     </div>
 
